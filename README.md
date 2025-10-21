@@ -39,7 +39,7 @@ confidentiality.
    npm start
 
 
-## 📁 Project Structure
+## 📁 Project Structure for the front end
 
 ```
 react_app/
@@ -58,26 +58,19 @@ react_app/
 └── vite.config.js      # Vite configuration
 ```
 
-## 🧩 Adding Routes
-
-To add new routes to the application, update the `Routes.jsx` file:
-
-```jsx
-import { useRoutes } from "react-router-dom";
-import HomePage from "pages/HomePage";
-import AboutPage from "pages/AboutPage";
-
-const ProjectRoutes = () => {
-  let element = useRoutes([
-    { path: "/", element: <HomePage /> },
-    { path: "/about", element: <AboutPage /> },
-    // Add more routes as needed
-  ]);
-
-  return element;
-};
-```
-
+## Architecture technique 
+L’application AutoPointage sur une architecture RH-Employé composée de trois couches 
+principales :  
+• Couche présentation (Front-end) : développée avec React.js, elle permet aux 
+utilisateurs (RH et Employé) d’interagir avec l’application via une interface simple et 
+intuitive.  
+• Couche logique métier (Backend): assurée par Spring Boot , il gère la logique 
+métier et les APIs REST, Flask s’occupe de la reconnaissance faciale via DeepFace et 
+MediaPipe. 
+• Couche données (Base de données): implémentée avec MySQL via XAMPP, il 
+Stocke les utilisateurs, employés, présences et rapports de pointage. 
+Cette architecture favorise la séparation des responsabilités, la sécurité des données et une 
+meilleure scalabilité de l’application
 ## 🎨 Styling
 
 This project uses Tailwind CSS for styling. The configuration includes:
